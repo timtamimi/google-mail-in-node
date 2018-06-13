@@ -1,0 +1,37 @@
+link(rel='stylesheet', href='/public/css/bootstrap.css')
+link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:100,400,700')
+link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/css/tether.min.css')
+link(rel='stylesheet', href='/public/css/font-awesome.css')
+link(rel='stylesheet', href='/public/css/selectize.css')
+link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.min.css')
+link(rel='stylesheet', media='print', href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.print.css')
+link(rel='stylesheet', href='/public/css/style.css')
+
+
+
+script(src='https://momentjs.com/downloads/moment.js')
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.min.js')
+
+script(src='/public/js/selectize.js')
+script(src='/public/js/selectize.js')
+script(src='/public/js/popper.js')
+script(src='/public/js/bootstrap.js')
+script(src='/public/js/Chart.js')
+script(src='/public/js/scripts.js')
+if messages
+	if messages.warning
+		if messages.warning.length
+			div.alert.alert-warning.alert-dismissable
+				a(data-dismiss="alert", aria-label="close").close &times;
+				strong #{messages.warning}
+	if messages.danger
+		if messages.danger.length
+			div.alert.alert-danger.alert-dismissable
+				a(data-dismiss="alert", aria-label="close").close &times;
+				strong #{messages.danger}
+	if messages.success
+		if messages.success.length
+			div.alert.alert-success.alert-dismissable
+				a(data-dismiss="alert", aria-label="close").close &times;
+				strong #{messages.success}

@@ -1,0 +1,47 @@
+head
+	title Email
+	include partials/header
+body
+	include partials/navigation
+	.container-fluid
+		main(role="main")
+		
+			h2 Number of unread emails: <span id="emailCount">Unknown</span>
+		
+			nav.navbar.navbar.light.justify-content-between
+				.btn-group(role="group")
+					button(type="button" onclick="getMailFromGoogle()").btn.btn-primary Refresh
+				.btn-group(role="group")
+					button.btn.btn-primary(type="button" data-toggle="modal" data-target="#sendMailModal") Compose
+
+			#sendMailModal.modal.fade(tabindex="-1" role="dialog" aria-labelledby="modalLabelLarge" aria-hidden="true")
+				.modal-dialog.modal-lg
+					.modal-content
+						.modal-header
+							h4#modalLabelLarge.modal-title Compose a new message
+							button.close(type="button" data-dismiss="modal" aria-label="Close")
+								span(aria-hidden="true") ×
+						.modal-body
+							form
+								.form-group
+								div
+									label(for="email_toField") To
+									input(type="email" required)#email_toField.form-control
+								div
+									label(for="email_subjectField") Subject
+									input(type="text" required)#email_subjectField.form-control
+								div
+									label(for="email_bodyField") Message
+									textarea#email_bodyField.form-control
+								div
+									button.btn.btn-primary(type="button" onclick="emailForm_sendMail();" method="post") Send
+
+
+
+			#inboxList
+				.login-box
+					a#google-connect.social-button(href='https://accounts.google.com/o/oauth2/v2/auth?client_id=409290948854-b0sgl365aqbflmqr3oc17bl8stru0f7n.apps.googleusercontent.com&state_parameter_passthrough_value&redirect_uri=http%3A%2F%2Flocalhost:8999%2FoAuthCallBack&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.modify&response_type=code')
+						span Connect with Google
+
+			#inboxOverlay
+
